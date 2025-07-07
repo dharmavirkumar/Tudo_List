@@ -16,16 +16,28 @@ if (objStr != null) {
     
 }
 
-displayInfo();
+
+
 
 addUser.onclick=()=>{
-    const name = student_name.value;
+     const name = student_name.value;
     const id = student_id.value;
     const email = student_email.value;
     const contect = student_contect.value;
+    if (edit_id != null) {
+        userArray.splice(edit_id,1,{ name, id, email, contect });
+        edit_id = null;
+
+        
+    } else {
+
+    
+    userArray.push({ name, id, email, contect });    
+    }
+   
 // 
     // userArray.push({'name': name},{'id':id},{'email':email},{'contect':contect});
-    userArray.push({ name, id, email, contect });
+    
 
     saveInfo(userArray);
 
@@ -33,7 +45,7 @@ addUser.onclick=()=>{
     student_id.value = "";
     student_email.value = "";
     student_contect.value = "";
-    displayInfo();
+   
     addUser.innerHTML = btnText;
 
 }
@@ -41,6 +53,7 @@ addUser.onclick=()=>{
 function saveInfo(userArray){
     let str = JSON.stringify(userArray);
     localStorage.setItem('users',str);
+    displayInfo();
 
 }
 
@@ -76,6 +89,6 @@ window.editInfo = function(id){
 window.deleteInfo = function(id){
    userArray.splice(id,1);
    saveInfo(userArray);
-   displayInfo()
+
 
 }
