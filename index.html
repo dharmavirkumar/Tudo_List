@@ -1,72 +1,59 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/src/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration System</title>
+  <link rel="stylesheet" href="src/output.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
-<body class="bg-cyan-300">
-    
-   
-    <div class="grid grid-cols-2 flex  justify-center my-50 sm:grid-cols-1">
-        <div class=" ml-40">
-            <div>
-                <label for="name">Student Name:</label><br>
-            <input type="text" id="student_name"class="border border-2 rounded-lg"><br>
-            <label for="name">Student Id:</label><br>
-            <input type="text" id="student_id"class="border border-2 rounded-lg"><br>
-            <label for="name">Student Email:</label><br>
-            <input type="email" id="student_email"  class="border border-2 rounded-lg" ><br>
-            <label for="name">Student Contect No.:</label><br>
-            <input type="number"  id="student_contect" class="border border-2 rounded-lg"><br>
-
-            <button type="button" id="addUser" class="border border-2 rounded-lg my-5 ml-10 w-20">Add Info</button>
-            </div>
-            
-        </div>
-
-        <!-- TABLE SECTION -->
-         <div >
-            <table>
-            <thead>
-                <tr>
-                <th><span class="mx-3">Name</span></th>
-                <th><span class="mx-3">Id</span></th>
-                 <th><span class="mx-3">Email</span></th>
-                 <th><span class="mx-3">Contect No</span></th>
-                 <th><span class="mx-10">Action</span></th>
-               </tr>
-            </thead>
-
-            <tbody id="recods" >
-                  <!-- <tr class="border border-2 rounded-lg">
-                    <td><span class="mx-3">Alfreds</span></td>
-                    <td><span class="mx-3">E201120208</span></td>
-                    <td><span class="mx-3">singh@gmail.com</span></td>
-                    <td><span class="mx-3">1234567890</span></td>
-                    <td>
-                        <i class="fa-solid fa-pen-to-square mx-8"></i>
-                        <i class="fa-solid fa-trash "></i>
-                    </td>
-                    </tr> -->
-                   
-            </tbody>
+<body class="bg-cyan-300 min-h-screen flex items-center justify-center">
   
+  <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-10">
+    
+    <!-- Form Section -->
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Student Registration</h2>
+      
+      <label for="student_name" class="block text-sm font-medium mb-1">Student Name:</label>
+      <input type="text" id="student_name" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Enter name" />
 
-        </table>
+      <label for="student_id" class="block text-sm font-medium mb-1">Student ID:</label>
+      <input type="text" id="student_id" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Enter ID" />
 
+      <label for="student_email" class="block text-sm font-medium mb-1">Email:</label>
+      <input type="email" id="student_email" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Enter email" />
 
-         </div>
+      <label for="student_contect" class="block text-sm font-medium mb-1">Contact No.:</label>
+      <input type="number" id="student_contect" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Enter contact number" />
 
-        
-
-
-
-
-
+      <button type="button" id="addUser" class="w-full bg-blue-500 text-white font-semibold py-2 rounded hover:bg-blue-600 transition">
+        Add Student
+      </button>
     </div>
-    <script type="module" src="/Index.js"></script>
+
+    <!-- Table Section -->
+    <div class="overflow-x-auto">
+      <h2 class="text-xl font-semibold mb-4">Registered Students</h2>
+      <table class="min-w-full table-auto border-collapse border border-gray-300 text-sm text-left">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="border border-gray-300 px-4 py-2">Name</th>
+            <th class="border border-gray-300 px-4 py-2">ID</th>
+            <th class="border border-gray-300 px-4 py-2">Email</th>
+            <th class="border border-gray-300 px-4 py-2">Contact</th>
+            <th class="border border-gray-300 px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="recods" class="bg-white">
+          <!-- Dynamic rows here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script type="module" src="index.js"></script>
 </body>
 </html>
